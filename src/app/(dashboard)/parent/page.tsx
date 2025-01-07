@@ -9,7 +9,7 @@ const ParentPage = () => {
 			{/* LEFT */}
 			<div className='w-full xl:w-2/3'>
 				<div className='h-full bg-white p-4 rounded-md'>
-					<h1 className='text-xl font-semibold'>Schedule [student name]</h1>
+					<h1 className='text-xl font-semibold'>Schedule [student namew]</h1>
 				<BigCalendar />
         </div>
 			</div>
