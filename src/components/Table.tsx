@@ -15,6 +15,7 @@ const Table = ({
 				<tr className='text-left text-gray-500 text-sm'>
 					{columns.map((col) => (
 						<th key={col.accessor} className={col.className}>{col.header}</th>
+						ASD
 					))}
 				</tr>
 			</thead>
