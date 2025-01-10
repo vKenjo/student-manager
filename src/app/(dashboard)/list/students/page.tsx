@@ -1,12 +1,22 @@
 import React from 'react';
 import Image from 'next/image';
-import { role, studentsData } from '@/lib/data';
+import { role, parentsData } from '@/lib/data';
 import TableSearch from '@/components/TableSearch';
 import Pagination from '@/components/Pagination';
 import Link from 'next/link';
 import Table from '@/components/Table';
 
-
+type Teacher = {
+	id: number;
+	teacherId: string;
+	name: string;
+	email?: string;
+	photo: string;
+	phone: string;
+	subjects: string[];
+	classes: string[];
+	address: string;
+};
 
 const columns = [
 	{
@@ -44,7 +54,7 @@ const columns = [
 	},
 ];
 
-const StudentsListpage = () => {
+const ParentsListpage = () => {
 	const renderRow = (item: Teacher) => (
 		<tr
 			key={item.id}
@@ -89,7 +99,7 @@ const StudentsListpage = () => {
 		<div className='bg-white p-4 rounded-md flex-1 m-4 mt-0'>
 			{/* TOP */}
 			<div className='flex items-center justify-between'>
-				<h1 className='hidden md:block text-lg font-semibold'>All Students</h1>
+				<h1 className='hidden md:block text-lg font-semibold'>All Parents</h1>
 				<div className='flex flex-col md:flex-row items-center gap-4 w-full md:w-auto'>
 					<TableSearch />
 					<div className='flex items-center gap-4 self-end'>
@@ -108,11 +118,11 @@ const StudentsListpage = () => {
 				</div>
 			</div>
 			{/* LIST */}
-			<Table columns={columns} renderRow={renderRow} data={studentsData} />
+			<Table columns={columns} renderRow={renderRow} data={parentsData} />
 			{/* PAGINATION */}
 			<Pagination />
 		</div>
 	);
 };
 
-export default StudentsListpage;
+export default ParentsListpage;
